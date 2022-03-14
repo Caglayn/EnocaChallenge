@@ -1,0 +1,15 @@
+server:
+  port: ${ENOCA_TASK_SVC_PORT}
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${ENOCA_TASK_SVC_DB_LOADBALANCER_IP}:${ENOCA_TASK_SVC_DB_PORT}/${ENOCA_TASK_SVC_DB_NAME}
+    username: ${ENOCA_TASK_SVC_DB_USERNAME}
+    password: ${ENOCA_TASK_SVC_DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      format-sql: true
