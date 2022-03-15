@@ -81,4 +81,19 @@ public class CustomerService {
         }
         return customerDtos;
     }
+
+    public List<CustomerDetailResponseDto> customerWithoutOrder(){
+        List<Customer> customers = this.findAll();
+        List<CustomerDetailResponseDto> resultList = new ArrayList<>();
+        for (Customer customer:customers){
+            if (customer.getCustomerOrders()==null || customer.getCustomerOrders().size()<1){
+                resultList.add(CustomerDetailResponseDto.builder()
+                        .id(customer.getId())
+                        .age(customer.getAge())
+                        .name(customer.getName())
+                        .build());
+            }
+        }
+        return resultList;
+    }
 }

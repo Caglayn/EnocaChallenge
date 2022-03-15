@@ -12,5 +12,6 @@ public class RestApiUrls {
     public static final String FINDBYID = "/findbyid";
     public static final String FINDORDERAFTERDATE = "/findorderafterdate";
     public static final String FINDCUSTOMERNAMELIKE = "/customernamelike";
+    public static final String FINDCUSTOMERWITHOUTORDER = "/customerwithoutorder";
 
 }

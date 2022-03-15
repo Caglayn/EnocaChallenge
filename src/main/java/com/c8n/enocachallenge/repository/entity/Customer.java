@@ -20,6 +20,6 @@ public class Customer {
     private String name;
     private int age;
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
     private Set<CustomerOrder> customerOrders;
 }

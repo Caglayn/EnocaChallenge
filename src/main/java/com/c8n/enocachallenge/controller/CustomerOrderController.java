@@ -9,14 +9,11 @@ import com.c8n.enocachallenge.dto.response.CustomerDetailsWithOrdersResponseDto;
 import com.c8n.enocachallenge.dto.response.OrderDetailResponseDto;
 import com.c8n.enocachallenge.service.CustomerOrderService;
 import io.swagger.v3.oas.annotations.Operation;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 
-@Slf4j
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping(API + VERSION + ORDER)

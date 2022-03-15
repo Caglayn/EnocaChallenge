@@ -6,6 +6,7 @@ import com.c8n.enocachallenge.dto.request.SaveCustomerRequestDto;
 import com.c8n.enocachallenge.dto.request.UpdateCustomerRequestDto;
 import com.c8n.enocachallenge.dto.response.CustomerDetailResponseDto;
 import com.c8n.enocachallenge.service.CustomerService;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -45,5 +46,11 @@ public class CustomerController {
     @GetMapping(LIST)
     public ResponseEntity<List<CustomerDetailResponseDto>> listAllCustomers(){
         return ResponseEntity.ok(customerService.listAllDto());
+    }
+
+    @GetMapping(FINDCUSTOMERWITHOUTORDER)
+    @Operation(summary = "List all customers who have no order")
+    public ResponseEntity<List<CustomerDetailResponseDto>> listCustomersWithoutOrder(){
+        return ResponseEntity.ok(customerService.customerWithoutOrder());
     }
 }
